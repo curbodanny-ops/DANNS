@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StyleWear - Clothing Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f0e8;
+            color: #28231f;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 7%;
+            background: #fffdf9;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #a4774f;
+        }
+
+        .tagline {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #75685c;
+        }
+
+        /* HOMEPAGE */
+        .home {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(25, 20, 17, 0.82),
+                    rgba(25, 20, 17, 0.25)
+                ),
+                url("phone (1).png") center/cover no-repeat;
+        }
+
+        .content {
+            max-width: 650px;
+            color: white;
+        }
+
+        .content .subtitle {
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: #e6c5a1;
+            margin-bottom: 22px;
+        }
+
+        .content h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 6vw, 75px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .content h1 span {
+            color: #e6c5a1;
+            font-style: italic;
+        }
+
+        .content p {
+            max-width: 520px;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #f2ece5;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #e6c5a1;
+            color: #28231f;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* CLOTHING CATEGORIES */
+        .categories {
+            padding: 45px 8% 100px;
+            text-align: center;
+        }
+
+        .categories h2 {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .categories > p {
+            color: #75685c;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .category {
+            padding: 35px 15px;
+            background: #e8ded1;
+            border: 1px solid #d9c8b5;
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            background: #d9c3aa;
+            transform: translateY(-5px);
+        }
+
+        .category .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            font-family: Georgia, serif;
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .category a {
+            color: #705037;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* BOTTOM NAVIGATION */
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px;
+            background: rgba(35, 30, 26, 0.96);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #e6c5a1;
+            color: #28231f;
+        }
+
+        .bottom-nav .logout {
+            color: #e6c5a1;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 650px) {
+            header {
+                padding: 20px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .tagline {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .home {
+                min-height: 70vh;
+                padding: 40px 25px;
+                background-position: center;
+            }
+
+            .content h1 {
+                font-size: 43px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            .categories {
+                padding: 40px 20px 110px;
+            }
+
+            .categories h2 {
+                font-size: 29px;
+            }
+
+            .category-container {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-nav {
+                bottom: 8px;
+                width: 97%;
+                padding: 7px 4px;
+                gap: 2px;
+            }
+
+            .bottom-nav a {
+                font-size: 10px;
+                padding: 10px 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">STYLE<span>WEAR.</span></div>
+        <div class="tagline">YOUR STYLE, YOUR STORY</div>
+    </header>
+
+    <section class="home">
+        <div class="content">
+
+            <div class="subtitle">NEW FASHION COLLECTION</div>
+
+            <h1>
+                Wear Your<br>
+                <span>Confidence.</span>
+            </h1>
+
+            <p>
+                Welcome to StyleWear! Discover trendy outfits,
+                timeless fashion, and everyday essentials.
+                Find the perfect clothing to express your
+                personality and make every moment stylish.
+            </p>
+
+            <a href="PRODUCT.html" class="shop-btn">
+                SHOP NOW &rarr;
+            </a>
+
+        </div>
+    </section>
+
+    <section class="categories">
+
+        <h2>Explore Our Collections</h2>
+
+        <p>
+            Find your favorite styles for every occasion.
+        </p>
+
+        <div class="category-container">
+
+            <div class="category">
+                <div class="icon">&#9826;</div>
+                <h3>Men's Clothing</h3>
+                <a href="PRODUCT.html">SHOP MEN &rarr;</a>
+            </div>
+
+            <div class="category">
+                <div class="icon">&#10047;</div>
+                <h3>Women's Clothing</h3>
+                <a href="PRODUCT.html">SHOP WOMEN &rarr;</a>
+            </div>
+
+            <div class="category">
+                <div class="icon">&#10022;</div>
+                <h3>New Arrivals</h3>
+                <a href="PRODUCT.html">EXPLORE NOW &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="HOMEPAGE.html">HOMEPAGE</a>
+        <a href="ABOUT.html">ABOUT</a>
+        <a href="PRODUCT.html">PRODUCT</a>
+        <a href="CONTACT.html">CONTACT</a>
+        <a href="film.html">FILM VIEWING</a>
+        <a href="INDEX.html" class="logout">LOGOUT</a>
+    </nav>
+
+</body>
+</html>
